@@ -1,151 +1,151 @@
 import React, { useEffect, useState } from 'react';
 import { Slider, Progress } from 'antd';
 
-const initialData = [
-    {
-      "Risk Score": 0,
-      "Nigerian Stocks": "18",
-      "Foriegn Stocks": "4",
-      "Tech Stocks": "2",
-      "Emerging Stocks": "7",
-      "Nigerian Bonds": "35",
-      "Foriegn Bonds": "15",
-      "Commodities": "7",
-      "Real Estate": "12",
-      "T-Bills": "0",
-      "Alternative": "0"
-   },
-    {
-      "Risk Score": 1,
-      "Nigerian Stocks": "20",
-      "Foriegn Stocks": "5",
-      "Tech Stocks": "3",
-      "Emerging Stocks": "7",
-      "Nigerian Bonds": "35",
-      "Foriegn Bonds": "6",
-      "Commodities": "12",
-      "Real Estate": "12",
-      "T-Bills": "0",
-      "Alternative": "0"
-   },
-    {
-      "Risk Score": 2,
-      "Nigerian Stocks": "23",
-      "Foriegn Stocks": "5",
-      "Tech Stocks": "4",
-      "Emerging Stocks": "7",
-      "Nigerian Bonds": "35",
-      "Foriegn Bonds": "14",
-      "Commodities": "12",
-      "Real Estate": "0",
-      "T-Bills": "0",
-      "Alternative": "0"
-   },
-    {
-      "Risk Score": 3,
-      "Nigerian Stocks": "26",
-      "Foriegn Stocks": "6",
-      "Tech Stocks": "4",
-      "Emerging Stocks": "7",
-      "Nigerian Bonds": "35",
-      "Foriegn Bonds": "10",
-      "Commodities": "12",
-      "Real Estate": "0",
-      "T-Bills": "0",
-      "Alternative": "0"
-   },
-    {
-      "Risk Score": 4,
-      "Nigerian Stocks": "29",
-      "Foriegn Stocks": "7",
-      "Tech Stocks": "5",
-      "Emerging Stocks": "6",
-      "Nigerian Bonds": "35",
-      "Foriegn Bonds": "6",
-      "Commodities": "12",
-      "Real Estate": "0",
-      "T-Bills": "0",
-      "Alternative": "0"
-   },
-    {
-      "Risk Score": 5,
-      "Nigerian Stocks": "31",
-      "Foriegn Stocks": "8",
-      "Tech Stocks": "6",
-      "Emerging Stocks": "5",
-      "Nigerian Bonds": "35",
-      "Foriegn Bonds": "3",
-      "Commodities": "12",
-      "Real Estate": "0",
-      "T-Bills": "0",
-      "Alternative": "0"
-   },
-    {
-      "Risk Score": 6,
-      "Nigerian Stocks": "35",
-      "Foriegn Stocks": "8",
-      "Tech Stocks": "7",
-      "Emerging Stocks": "3",
-      "Nigerian Bonds": "35",
-      "Foriegn Bonds": "12",
-      "Commodities": "0",
-      "Real Estate": "0",
-      "T-Bills": "0",
-      "Alternative": "0"
-   },
-    {
-      "Risk Score": 7,
-      "Nigerian Stocks": "45",
-      "Foriegn Stocks": "13",
-      "Tech Stocks": "12",
-      "Emerging Stocks": "7",
-      "Nigerian Bonds": "23",
-      "Foriegn Bonds": "0",
-      "Commodities": "0",
-      "Real Estate": "0",
-      "T-Bills": "0",
-      "Alternative": "0"
-   },
-    {
-      "Risk Score": 8,
-      "Nigerian Stocks": "45",
-      "Foriegn Stocks": "15",
-      "Tech Stocks": "15",
-      "Emerging Stocks": "9",
-      "Nigerian Bonds": "16",
-      "Foriegn Bonds": "0",
-      "Commodities": "0",
-      "Real Estate": "0",
-      "T-Bills": "0",
-      "Alternative": "0"
-   },
-    {
-      "Risk Score": 9,
-      "Nigerian Stocks": "45",
-      "Foriegn Stocks": "18",
-      "Tech Stocks": "17",
-      "Emerging Stocks": "11",
-      "Nigerian Bonds": "9",
-      "Foriegn Bonds": "0",
-      "Commodities": "0",
-      "Real Estate": "0",
-      "T-Bills": "0",
-      "Alternative": "0"
-   },
-    {
-      "Risk Score": 10,
-      "Nigerian Stocks": "45",
-      "Foriegn Stocks": "20",
-      "Tech Stocks": "19",
-      "Emerging Stocks": "14",
-      "Nigerian Bonds": "2",
-      "Foriegn Bonds": "0",
-      "Commodities": "0",
-      "Real Estate": "0",
-      "T-Bills": "0",
-      "Alternative": "0"
-   }
-   ]
+// const initialData = [
+//     {
+//       "Risk Score": 0,
+//       "Nigerian Stocks": "18",
+//       "Foriegn Stocks": "4",
+//       "Tech Stocks": "2",
+//       "Emerging Stocks": "7",
+//       "Nigerian Bonds": "35",
+//       "Foriegn Bonds": "15",
+//       "Commodities": "7",
+//       "Real Estate": "12",
+//       "T-Bills": "0",
+//       "Alternative": "0"
+//    },
+//     {
+//       "Risk Score": 1,
+//       "Nigerian Stocks": "20",
+//       "Foriegn Stocks": "5",
+//       "Tech Stocks": "3",
+//       "Emerging Stocks": "7",
+//       "Nigerian Bonds": "35",
+//       "Foriegn Bonds": "6",
+//       "Commodities": "12",
+//       "Real Estate": "12",
+//       "T-Bills": "0",
+//       "Alternative": "0"
+//    },
+//     {
+//       "Risk Score": 2,
+//       "Nigerian Stocks": "23",
+//       "Foriegn Stocks": "5",
+//       "Tech Stocks": "4",
+//       "Emerging Stocks": "7",
+//       "Nigerian Bonds": "35",
+//       "Foriegn Bonds": "14",
+//       "Commodities": "12",
+//       "Real Estate": "0",
+//       "T-Bills": "0",
+//       "Alternative": "0"
+//    },
+//     {
+//       "Risk Score": 3,
+//       "Nigerian Stocks": "26",
+//       "Foriegn Stocks": "6",
+//       "Tech Stocks": "4",
+//       "Emerging Stocks": "7",
+//       "Nigerian Bonds": "35",
+//       "Foriegn Bonds": "10",
+//       "Commodities": "12",
+//       "Real Estate": "0",
+//       "T-Bills": "0",
+//       "Alternative": "0"
+//    },
+//     {
+//       "Risk Score": 4,
+//       "Nigerian Stocks": "29",
+//       "Foriegn Stocks": "7",
+//       "Tech Stocks": "5",
+//       "Emerging Stocks": "6",
+//       "Nigerian Bonds": "35",
+//       "Foriegn Bonds": "6",
+//       "Commodities": "12",
+//       "Real Estate": "0",
+//       "T-Bills": "0",
+//       "Alternative": "0"
+//    },
+//     {
+//       "Risk Score": 5,
+//       "Nigerian Stocks": "31",
+//       "Foriegn Stocks": "8",
+//       "Tech Stocks": "6",
+//       "Emerging Stocks": "5",
+//       "Nigerian Bonds": "35",
+//       "Foriegn Bonds": "3",
+//       "Commodities": "12",
+//       "Real Estate": "0",
+//       "T-Bills": "0",
+//       "Alternative": "0"
+//    },
+//     {
+//       "Risk Score": 6,
+//       "Nigerian Stocks": "35",
+//       "Foriegn Stocks": "8",
+//       "Tech Stocks": "7",
+//       "Emerging Stocks": "3",
+//       "Nigerian Bonds": "35",
+//       "Foriegn Bonds": "12",
+//       "Commodities": "0",
+//       "Real Estate": "0",
+//       "T-Bills": "0",
+//       "Alternative": "0"
+//    },
+//     {
+//       "Risk Score": 7,
+//       "Nigerian Stocks": "45",
+//       "Foriegn Stocks": "13",
+//       "Tech Stocks": "12",
+//       "Emerging Stocks": "7",
+//       "Nigerian Bonds": "23",
+//       "Foriegn Bonds": "0",
+//       "Commodities": "0",
+//       "Real Estate": "0",
+//       "T-Bills": "0",
+//       "Alternative": "0"
+//    },
+//     {
+//       "Risk Score": 8,
+//       "Nigerian Stocks": "45",
+//       "Foriegn Stocks": "15",
+//       "Tech Stocks": "15",
+//       "Emerging Stocks": "9",
+//       "Nigerian Bonds": "16",
+//       "Foriegn Bonds": "0",
+//       "Commodities": "0",
+//       "Real Estate": "0",
+//       "T-Bills": "0",
+//       "Alternative": "0"
+//    },
+//     {
+//       "Risk Score": 9,
+//       "Nigerian Stocks": "45",
+//       "Foriegn Stocks": "18",
+//       "Tech Stocks": "17",
+//       "Emerging Stocks": "11",
+//       "Nigerian Bonds": "9",
+//       "Foriegn Bonds": "0",
+//       "Commodities": "0",
+//       "Real Estate": "0",
+//       "T-Bills": "0",
+//       "Alternative": "0"
+//    },
+//     {
+//       "Risk Score": 10,
+//       "Nigerian Stocks": "45",
+//       "Foriegn Stocks": "20",
+//       "Tech Stocks": "19",
+//       "Emerging Stocks": "14",
+//       "Nigerian Bonds": "2",
+//       "Foriegn Bonds": "0",
+//       "Commodities": "0",
+//       "Real Estate": "0",
+//       "T-Bills": "0",
+//       "Alternative": "0"
+//    }
+//    ]
 
 const SliderRange = () => {
     const [inputValue, setInputValue] = useState(1);
@@ -160,7 +160,7 @@ const SliderRange = () => {
       // Function to fetch data from the API
       const fetchData = async () => {
         try {
-          const response = await fetch('http://127.0.0.1:5555/instruweight');
+          const response = await fetch('https://robo-advisor-weld.vercel.app/instruweight');
           const data = await response.json();
          //  console.log("data", data.data)
   

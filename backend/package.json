@@ -6,10 +6,11 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "build": "netlify deploy --prod"
   },
   "keywords": [],
-  "author": "MamadTaheri68",
+  "author": "EfeRoy",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
